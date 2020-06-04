@@ -9,10 +9,56 @@ const jobTypes = {
   programmer: 'Any Ship!'
 };
 
-// Your code will go here
+//Your code will go here
+//create a crewmember template
+class CrewMember {
+  constructor(name, job, specialSkill, ship) {
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = ship;
+  }
+  //allow crewmember to enter a ship
+  enterShip(Ship) {
+    Ship.crew = [this];
+    this.ship = Ship;
+  }
+}
+//create a ship template
+class Ship {
+  constructor(name, type, ability, crew) {
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = [];
+  }
+  //create a mission statement method that returns the ships mission satement
+  missionStatement() {
+    //if ship is manned
+    if (this.crew.length > 0) {
+    //return mission statemnt of ship
+    return this.ability;
+    //otherwise if ship is unmanned
+    }else{
+    //return "Can't perform a mission yet."
+      return "Can't perform a mission yet.";
+    }
+  }
+}
 
 
 
+// class CrewMember {
+//   constructor(name, job, specialSkill, ship) {
+//     this.name = name;
+//     this.job = job;
+//     this.specialSkill = specialSkill;
+//     this.ship = ship;
+//   }
+//    enterShip = (ship) => {
+//     ship.crew = [this.name];
+//   }
+// }
 
 
 
